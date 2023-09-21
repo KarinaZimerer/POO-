@@ -1,0 +1,71 @@
+public class CameraFotografica {
+    // Detalhes internos protegidos (usando encapsulamento)
+    private String modelo;
+    private int megapixels;
+    private boolean ligada;
+
+    // Construtor para inicializar uma instância da classe
+    public CameraFotografica(String modelo, int megapixels) {
+        this.modelo = modelo;
+        this.megapixels = megapixels;
+        this.ligada = false; // Inicialmente desligada
+    }
+
+    // Método público para ligar a câmera
+    public void ligar() {
+        if (!ligada) {
+            ligada = true;
+            System.out.println("A câmera está ligada.");
+        } else {
+            System.out.println("A câmera já está ligada.");
+        }
+    }
+
+    // Método público para tirar uma foto (exemplo de uso de encapsulamento)
+    public void tirarFoto() {
+        if (ligada) {
+            System.out.println("Clic! Foto tirada com sucesso.");
+        } else {
+            System.out.println("A câmera está desligada. Ligue-a antes de tirar uma foto.");
+        }
+    }
+
+    // Método público para desligar a câmera
+    public void desligar() {
+        if (ligada) {
+            ligada = false;
+            System.out.println("A câmera está desligada.");
+        } else {
+            System.out.println("A câmera já está desligada.");
+        }
+    }
+
+    // Método público para obter o modelo da câmera
+    public String getModelo() {
+        return modelo;
+    }
+
+    // Método público para obter a quantidade de megapixels
+    public int getMegapixels() {
+        return megapixels;
+    }
+
+    // Benefícios:
+    // - Segurança: Evitamos tirar fotos com a câmera desligada.
+    // - Organização: Os detalhes internos (modelo, megapixels) são protegidos e acessados via métodos públicos.
+    // - Manutenção: Podemos alterar os detalhes internos sem afetar o restante do código, desde que a interface pública permaneça a mesma.
+    
+    // Outros métodos e funcionalidades podem ser adicionados conforme necessário.
+
+    public static void main(String[] args) {
+        // Exemplo de uso da classe CameraFotografica
+        CameraFotografica minhaCamera = new CameraFotografica("Canon EOS", 24);
+
+        minhaCamera.ligar();
+        minhaCamera.tirarFoto();
+        minhaCamera.desligar();
+
+        System.out.println("Modelo da câmera: " + minhaCamera.getModelo());
+        System.out.println("Megapixels: " + minhaCamera.getMegapixels());
+    }
+}
