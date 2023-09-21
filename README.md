@@ -23,11 +23,12 @@ Aqui está um exemplo de como usar a classe CameraFotografica:
 
 java:
 
-public class ExemploCamera {
+
+
+        public class ExemploCamera {
     public static void main(String[] args) {
         // Criar uma instância da câmera
         CameraFotografica minhaCamera = new CameraFotografica("Canon", "EOS Rebel", 24);
-
         // Tirar uma foto
         minhaCamera.tirarFoto();
 
